@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<selector
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <item android:state_pressed="true" android:drawable="@color/list_backgroud_color"></item>
-    <item android:drawable="@drawable/layout_backgroud"></item>
-</selector><!-- From: file:/Users/yanpeipan/RN_dnxc/node_modules/react-native-baidu-hud/SpeechDemo/app/src/main/res/drawable/list_bg_color.xml -->
