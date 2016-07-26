@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        jar="/usr/local/Cellar/android-sdk/24.4/extras/android/m2repository/com/android/support/support-v4/18.0.0/support-v4-18.0.0.jar"
+        jumboMode="false"
+        revision="23.0.3"
+        sha1="44ec51e9d395a47aab135e5e1b556c0007442156">
+        <dex dex="/Users/yanpeipan/RN_dnxc/node_modules/react-native-baidu-hud/SpeechDemo/app/build/intermediates/pre-dexed/debug/support-v4-18.0.0-f15f599aa0fe7fb2da54eec6bb01d081bfe3d007.jar" />
+    </item>
+    <item
+        jar="/Users/yanpeipan/RN_dnxc/node_modules/react-native-baidu-hud/SpeechDemo/app/libs/Msc.jar"
+        jumboMode="false"
+        revision="23.0.3"
+        sha1="85a46b29703ef8930a92d2fdea8ff336275c7ab2">
+        <dex dex="/Users/yanpeipan/RN_dnxc/node_modules/react-native-baidu-hud/SpeechDemo/app/build/intermediates/pre-dexed/debug/Msc-54fe4bfb5d6a2e3ec0102f4d21f1c8552b9895d4.jar" />
+    </item>
+    <item
+        jar="/Users/yanpeipan/RN_dnxc/node_modules/react-native-baidu-hud/SpeechDemo/app/libs/Sunflower.jar"
+        jumboMode="false"
+        revision="23.0.3"
+        sha1="f55dc5ac5513169acd090e14f65a52b36298e83f">
+        <dex dex="/Users/yanpeipan/RN_dnxc/node_modules/react-native-baidu-hud/SpeechDemo/app/build/intermediates/pre-dexed/debug/Sunflower-048de935ce367a7a01da48fd152b49a1c015fa2b.jar" />
+    </item>
+
+</items>
