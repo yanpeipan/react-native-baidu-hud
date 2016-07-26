@@ -45,8 +45,8 @@ RCT_EXPORT_METHOD(disconnect) {
     NSString *imageName = [NSString stringWithFormat:@"hud_%@",maneuver.maneuverName];
     [self.bridge.eventDispatcher sendAppEventWithName:@"hud"
                                                  body:@{
-                                                        @"event": @"onChangedWithManeuver",
-                                                        @"maneuver": @{
+                                                        @"event": @"onChangedManeuver",
+                                                        @"body": @{
                                                                 @"maneuverId": @(maneuver.maneuverId),
                                                                 @"straight": @(maneuver.straight),
                                                                 @"maneuverName": maneuver.maneuverName,
@@ -76,8 +76,8 @@ RCT_EXPORT_METHOD(disconnect) {
 {
     [self.bridge.eventDispatcher sendAppEventWithName:@"hud"
                                                  body:@{
-                                                        @"event": @"onChangedWithServiceArea",
-                                                        @"serviceArea": @{
+                                                        @"event": @"onChangedServiceArea",
+                                                        @"body": @{
                                                                 @"serviceArea": serviceArea.serviceArea,
                                                                 @"distance": @(serviceArea.distance),
                                                                 },
@@ -96,7 +96,7 @@ RCT_EXPORT_METHOD(disconnect) {
     [self.bridge.eventDispatcher sendAppEventWithName:@"hud"
                                                  body:@{
                                                         @"event": @"onChangedAssistant",
-                                                        @"assistant": @{
+                                                        @"body": @{
                                                                 @"assistUpdateType": @(assistant.assistUpdateType),
                                                                 @"assistantType": @(assistant.assistantType),
                                                                 @"limitedSpeed": @(assistant.limitedSpeed),
@@ -115,8 +115,8 @@ RCT_EXPORT_METHOD(disconnect) {
 {
     [self.bridge.eventDispatcher sendAppEventWithName:@"hud"
                                                  body:@{
-                                                        @"event": @"onChangedWithRemainInfo",
-                                                        @"remainInfo": @{
+                                                        @"event": @"onChangedRemainInfo",
+                                                        @"body": @{
                                                                 @"remainDistance": @(remainInfo.remainDistance),
                                                                 @"remainTime": @(remainInfo.remainTime)
                                                                 },
@@ -133,7 +133,7 @@ RCT_EXPORT_METHOD(disconnect) {
     [self.bridge.eventDispatcher sendAppEventWithName:@"hud"
                                                  body:@{
                                                         @"event": @"onChangedWithCurrentRoad",
-                                                        @"currentRoad": currentRoad.currentRoadName,
+                                                        @"body": currentRoad.currentRoadName,
                                                         }];
 }
 
@@ -206,7 +206,7 @@ RCT_EXPORT_METHOD(disconnect) {
 - (void)onReRoutePlanComplete
 {
     [self.bridge.eventDispatcher sendAppEventWithName:@"hud"
-                                                 body:@{@"event": @"onReRoutePlanComplete"}];
+                                                 body:@{@"event": @"onRoutePlanYawing"}];
 }
 
 /**
@@ -218,8 +218,8 @@ RCT_EXPORT_METHOD(disconnect) {
 {
     [self.bridge.eventDispatcher sendAppEventWithName:@"hud"
                                                  body:@{
-                                                        @"event": @"onChangedWithEnlargeRoad",
-                                                        @"enlargeRoad": @{
+                                                        @"event": @"onEnlargeRoad",
+                                                        @"body": @{
                                                                 @"enlargeShowState": @(enlargeRoad.enlargeShowState),
                                                                 @"enlargeType": @(enlargeRoad.enlargeType),
                                                                 @"enlargeBasicImage": enlargeRoad.enlargeBasicImage,
@@ -247,7 +247,7 @@ RCT_EXPORT_METHOD(disconnect) {
     [self.bridge.eventDispatcher sendAppEventWithName:@"hud"
                                                  body:@{
                                                         @"event": @"onChangedWithDestinationInfo",
-                                                        @"destionationInfo": @{
+                                                        @"body": @{
                                                                 @"longitude": @(destionationInfo.longitude),
                                                                 @"latitude": @(destionationInfo.latitude),
                                                                 @"destTotalDist": @(destionationInfo.destTotalDist),
@@ -266,8 +266,8 @@ RCT_EXPORT_METHOD(disconnect) {
 
     [self.bridge.eventDispatcher sendAppEventWithName:@"hud"
                                                  body:@{
-                                                        @"event": @"onChangedWithCarPointInfo",
-                                                        @"carPointInfo": @{
+                                                        @"event": @"onChangedCarPointInfo",
+                                                        @"body": @{
                                                                 @"longitude": @(carPointInfo.longitude),
                                                                 @"latitude": @(carPointInfo.latitude),
                                                                 @"speed": @(carPointInfo.speed),
@@ -286,8 +286,8 @@ RCT_EXPORT_METHOD(disconnect) {
 
     [self.bridge.eventDispatcher sendAppEventWithName:@"hud"
                                                  body:@{
-                                                        @"event": @"onChangedWithCarFreeStatus",
-                                                        @"carFreeStatus": @(carFreeStatus.isCarFree),
+                                                        @"event": @"onChangedCarFreeStatus",
+                                                        @"body": @(carFreeStatus.isCarFree),
                                                         }];
 }
 
@@ -301,7 +301,7 @@ RCT_EXPORT_METHOD(disconnect) {
     [self.bridge.eventDispatcher sendAppEventWithName:@"hud"
                                                  body:@{
                                                         @"event": @"onChangedWithTunnelUpdate",
-                                                        @"inTunnelStatus": @(inTunnelStatus.isInTunnel),
+                                                        @"body": @(inTunnelStatus.isInTunnel),
                                                         }];
 }
 
@@ -327,7 +327,7 @@ RCT_EXPORT_METHOD(disconnect) {
     [self.bridge.eventDispatcher sendAppEventWithName:@"hud"
                                                  body:@{
                                                         @"event": @"onChangedWithShapeInfo",
-                                                        @"shapeInfo": @{
+                                                        @"body": @{
                                                                 @"shapeIndex": @(shapeInfo.shapeIndex),
                                                                 @"distance": @(shapeInfo.distance),
                                                                 },
@@ -354,7 +354,7 @@ RCT_EXPORT_METHOD(disconnect) {
     [self.bridge.eventDispatcher sendAppEventWithName:@"hud"
                                                  body:@{
                                                         @"event": @"onChangeWithNearbyCamera",
-                                                        @"nearbyCameraList": nearbyCameraList,
+                                                        @"body": nearbyCameraList,
                                                         }];
 }
 
